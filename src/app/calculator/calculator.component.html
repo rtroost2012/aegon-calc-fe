@@ -1,0 +1,22 @@
+<div class="top-row">
+    <input id="first" type="number" name="first" value="0" [(ngModel)]="formData.a" required/>
+
+    <select id="type" [(ngModel)]="formData.type">
+        <option [ngValue]=0>+</option>
+        <option [ngValue]=1>-</option>
+        <option [ngValue]=2>*</option>
+        <option [ngValue]=3>/</option>
+    </select>
+</div>
+
+<div class="bottom-row">
+    <input id="second" type="number" name="second" value="0" [(ngModel)]="formData.b" required/>
+    <input id="calc-button" type="button" (click)="calculate()" value="Calculate"/>
+    <span *ngIf="!results.length" class="empty-history">No results to show, yet.</span>
+    <ul>
+        <li *ngFor="let item of results">
+            {{ item.a }}, {{ item.type }}, {{ item.b}} =
+            {{ item.result }}
+        </li>
+    </ul>
+</div>
