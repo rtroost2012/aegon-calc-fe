@@ -1,11 +1,20 @@
+import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+
+@Component({
+  selector: 'app-calculator',
+  template: ''
+})
+class MockCalculatorComponent {}
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        MockCalculatorComponent
       ],
     }).compileComponents();
   });
@@ -16,16 +25,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'calculator-frontend'`, () => {
+  it(`should have as title 'Simple Aegon Calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('calculator-frontend');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('calculator-frontend app is running!');
+    expect(app.title).toEqual('Simple Aegon Calculator');
   });
 });

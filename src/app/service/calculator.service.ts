@@ -4,7 +4,9 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Calculation, CalculationResultType } from "../types/calculation";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CalculatorService {
 
   constructor (private http: HttpClient) { }

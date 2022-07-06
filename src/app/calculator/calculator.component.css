@@ -14,3 +14,10 @@
     display: block;
     margin-top: 15px;
 }
+
+.warning {
+    display: block;
+    margin-top: 15px;
+    color:red;
+    font-weight: lighter;
+}
